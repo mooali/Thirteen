@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<!-- MAIN MENU -->
+<BorderPane styleClass="mainMenu" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <top>
+      <HBox styleClass="mainMenu__iconContainer" alignment="CENTER">
+         <Label styleClass="mainMenu__icon" alignment="CENTER" text="13" />
+      </HBox>
+   </top>
+   <center>
+      <StackPane>
+         <Pane fx:id="mainMenuBackground" />
+         <VBox styleClass="mainMenu__ButtonsContainer" alignment="CENTER" spacing="100.0">
+            <!-- PLAY BUTTON -->
+            <StackPane styleClass="mainMenu__PlayButtonContainer">
+               <Label styleClass="mainMenu__PlayButtonLine" StackPane.alignment="BOTTOM_CENTER" />
+               <Button fx:id="mainMenuPlayButton" alignment="CENTER" text="%MainMenu.play" />
+            </StackPane>
+            <!-- SETTINGS -->
+            <HBox alignment="CENTER" spacing="50.0">
+               <Button fx:id="soundButton" styleClass="mainMenu__SettingsButton" />
+               <Button fx:id="languageButton" styleClass="mainMenu__SettingsButton" text="%MainMenu.language" />
+               <Button fx:id="helpButton" styleClass="mainMenu__SettingsButton">
+                  <graphic>
+                     <ImageView fitHeight="25.0" fitWidth="25.0" preserveRatio="true">
+                        <Image url="@../images/info.png" />
+                     </ImageView>
+                  </graphic>
+               </Button>
+            </HBox>
+         </VBox>
+      </StackPane>
+   </center>
+</BorderPane>

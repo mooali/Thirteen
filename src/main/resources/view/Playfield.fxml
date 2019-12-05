@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<!-- PLAYFIELD -->
+<BorderPane styleClass="playfield" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1">
+   <!-- MENU BAR -->
+   <top>
+      <HBox styleClass="playfield__menuBar" maxHeight="100.0">
+         <!-- MENU BAR ITEM 1 -->
+         <StackPane alignment="CENTER_LEFT" prefWidth="100.0">
+            <Button fx:id="playfieldMenuBarButton" prefHeight="25.0" prefWidth="25.0" styleClass="playfield__menuBarButton">
+               <StackPane.margin>
+                  <Insets left="10.0" />
+               </StackPane.margin>
+            </Button>
+         </StackPane>
+         <!-- MENU BAR ITEM 2 -->
+         <Region prefWidth="50.0" HBox.hgrow="ALWAYS" />
+         <Label styleClass="playfield__menuIcon" text="13" BorderPane.alignment="CENTER" />
+         <Region prefWidth="50.0" HBox.hgrow="ALWAYS" />
+         <!-- MENU BAR ITEM 3 -->
+         <HBox alignment="CENTER_RIGHT" prefWidth="100.0" spacing="5.0">
+            <Label fx:id="playfieldStarCount" styleClass="playfield__stars" />
+            <ImageView fitHeight="20.0" fitWidth="20.0">
+               <Image url="@../images/star.png" />
+            </ImageView>
+            <padding>
+               <Insets right="10.0" />
+            </padding>
+         </HBox>
+         <padding>
+            <Insets bottom="10.0" top="10.0" />
+         </padding>
+      </HBox>
+   </top>
+   <!-- LEVEL DISPLAY -->
+   <center>
+      <StackPane fx:id="playfield">
+      <VBox fx:id="playfieldFrame">
+      <HBox alignment="CENTER">
+         <Button fx:id="playfieldToolUndo" styleClass="playfield__tool">
+            <HBox.margin>
+               <Insets left="50.0" />
+            </HBox.margin>
+             <graphic>
+                 <ImageView fitHeight="30.0" fitWidth="30.0" preserveRatio="true" styleClass="playfield__tool__img">
+                     <Image url="@../images/undo.png"/>
+                 </ImageView>
+             </graphic>
+         </Button>
+         <Region prefWidth="50.0" HBox.hgrow="ALWAYS" />
+         <Label fx:id="playfieldLevel" alignment="CENTER" styleClass="playfield__level" />
+         <Region prefWidth="50.0" HBox.hgrow="ALWAYS" />
+         <Button fx:id="playfieldToolBomb" styleClass="playfield__tool">
+            <HBox.margin>
+               <Insets right="50.0" />
+            </HBox.margin>
+             <graphic>
+                 <ImageView fitHeight="30.0" fitWidth="30.0" preserveRatio="true" styleClass="playfield__tool__img">
+                     <Image url="@../images/bomb.png"/>
+                 </ImageView>
+             </graphic>
+         </Button>
+         <padding>
+            <Insets bottom="50.0" top="50.0" />
+         </padding>
+      </HBox>
+      <!-- BLOCK MATRIX -->
+      <HBox fx:id="playfieldContainer" alignment="CENTER">
+         <StackPane>
+            <Pane fx:id="playfieldMergeBlocks" />
+            <Pane fx:id="playfieldBlocks" />
+            <padding>
+               <Insets bottom="20.0" />
+            </padding>
+         </StackPane>
+      </HBox>
+      </VBox>
+      </StackPane>
+   </center>
+</BorderPane>
